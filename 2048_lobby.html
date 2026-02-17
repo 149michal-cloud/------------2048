@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // בדיקה מיידית: האם יש משתמש ב-session?
+        if (!sessionStorage.getItem("current_user")) {
+            // אם אין משתמש, אנחנו מסתירים את הגוף של הדף כדי שלא יראו כלום לשבריר שנייה
+            document.documentElement.style.display = 'none';
+            // ומעבירים מיד לדף ההתחברות
+            window.location.href = "login.html";
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>לובי - 2048</title>
+</head>
+<body>
+    <h1>משחק 2048</h1>
+    <p>המטרה: להשתמש בחיצים כדי לחבר מספרים זהים ולהגיע ל-2048!</p>
+    <div class="menu-container">
+        <a href="Game_board.html" class="btn btn-start">התחל משחק</a>
+        <a href="menu.html" class="btn btn-back">חזור לתפריט</a>
+    </div>
+</body>
+</html>

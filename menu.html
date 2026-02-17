@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // בדיקה מיידית: האם יש משתמש ב-session?
+        if (!sessionStorage.getItem("current_user")) {
+            // אם אין משתמש, אנחנו מסתירים את הגוף של הדף כדי שלא יראו כלום לשבריר שנייה
+            document.documentElement.style.display = 'none';
+            // ומעבירים מיד לדף ההתחברות
+            window.location.href = "login.html";
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>מרכז המשחקים</title>
+</head>
+<body>
+    <h1>מה נשחק היום?</h1>
+    <div class="menu-container">
+        <a href="memory_lobby.html" class="btn btn-memory">משחק זיכרון</a>
+        <a href="bulls_lobby.html" class="btn btn-bulls">בול פגיעה</a>
+        <a href="2048_lobby.html" class="btn btn-2048">משחק 2048</a>
+    </div>
+</body>
+</html>

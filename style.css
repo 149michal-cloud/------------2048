@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* רקע צבעוני עדין שלא נחסם */
+    background: linear-gradient(135deg, #e0f2f1 0%, #e1f5fe 50%, #f3e5f5 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+    direction: rtl;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* צבעי הכפתורים */
+.btn-memory { background-color: #b2ebf2; color: #006064; }
+.btn-bulls { background-color: #ffecb3; color: #5d4037; }
+.btn-2048 { background-color: #bbdefb; color: #0d47a1; }
+.btn-start { background-color: #c8e6c9; color: #1b5e20; margin-top: 10px; }
+.btn-back { background-color: #eeeeee; color: #616161; font-size: 0.9rem; margin-top: 5px; }
+
+p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 350px;
+    line-height: 1.5;
+}
+
+
+
+/*login and register*/
+input {
+    padding: 12px;
+    border: 2px solid #e0f2f1;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* מבטיח שהפדינג לא יהרוס את הרוחב */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #80deea; /* צבע טורקיז עדין כשלוחצים על התיבה */
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.link-text {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #00796b;
+    text-decoration: none;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}

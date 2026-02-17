@@ -1,0 +1,128 @@
+ /* בסיס */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #faf8ef;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: #776e65;
+    margin-bottom: 20px;
+}
+
+/* הלוח */
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 15px;
+    background: #bbada0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* כל תא */
+.cell {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background: #cdc1b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: #776e65;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+
+
+/* --- עיצוב אזור הניקוד בלבד --- */
+
+/* עטיפה לכותרת ולניקוד כדי שיעמדו בשורה אחת */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 445px; /* תואם לרוחב הלוח שלך */
+    margin: 0 auto 20px auto;
+}
+
+/* מיכל התיבות של הניקוד */
+.scores-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+/* עיצוב התיבה עצמה (הריבוע החום) */
+.score-box {
+    background: #bbada0;
+    padding: 5px 20px;
+    border-radius: 6px;
+    min-width: 70px;
+    text-align: center;
+    color: white;
+}
+
+/* הכיתוב הקטן: "ניקוד" או "שיא" */
+.score-box .label {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #eee4da;
+    font-weight: bold;
+    display: block;
+    margin-bottom: -2px;
+}
+
+/* המספר עצמו שמתעדכן מה-JS */
+.score-box #current-score, 
+.score-box #best-score {
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+}
+
+/* התאמה של ה-H1 כדי שלא יתפוס את כל השורה */
+h1 {
+    margin: 0;
+    font-size: 55px;
+    color: #776e65;
+}
+
+
+
+/* --- עיצוב כפתור משחק חדש בלבד --- */
+
+.restart-btn {
+    background: #8f7a66;    /* הצבע החום הקלאסי של כפתורי 2048 */
+    color: #f9f6f2;         /* צבע טקסט בהיר מאוד */
+    border: none;           /* הסרת המסגרת ברירת המחדל */
+    border-radius: 5px;     /* פינות מעוגלות כמו התאים */
+    padding: 10px 20px;     /* מרווח פנימי לטקסט */
+    font-size: 18px;        /* גודל טקסט קריא */
+    font-weight: bold;      /* טקסט בולט */
+    cursor: pointer;        /* סימן של יד במעבר עכבר */
+    margin-top: 20px;       /* מרווח מהלוח */
+    font-family: inherit;   /* שימוש באותו פונט של הדף */
+    transition: background-color 0.2s ease; /* אנימציה עדינה בלחיצה */
+}
+
+.restart-btn:hover {
+    background: #7f6a56;    /* צבע מעט כהה יותר כשעוברים עם העכבר */
+}
+
+.restart-btn:active {
+    transform: scale(0.95); /* אפקט קטן של "לחיצה" כשלוחצים פיזית */
+}

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: 0;
+    direction: rtl;
+}
+
+.game-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    width: 850px; 
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.table-header {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.score-labels {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 18px;
+}
+
+.choice-labels {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    font-weight: bold;
+    color: #34495e;
+    padding-right: 20px;
+    font-size: 18px;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.game-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    border: 1px solid #edf2f7;
+}
+
+.score-section {
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+/* עיצוב עיגולי הניקוד הקטנים (a, b) */
+.score-section div {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #bdc3c7;
+    background-color: #fff;
+}
+
+.choice-section {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    padding-right: 20px;
+}
+
+/* עיצוב עיגולי הבחירה הגדולים (1-48) */
+.choice-section div {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 3px solid #cfd8dc;
+    background-color: #f8fafc;
+    flex-shrink: 0;
+}
+
+.game-row:hover {
+    background-color: #f1f7ff;
+}
+
+
+
+.colors {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+   
+}
+.colors div{
+     height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    flex-shrink: 0; 
+    display: inline-block;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+

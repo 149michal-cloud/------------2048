@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="/login.js"></script>
+    <title>כניסה למשחקים</title>
+</head>
+<body>
+    <h1>ברוכים הבאים!</h1>
+    <div class="menu-container">
+        <div class="form-group">
+            <label>שם משתמש:</label>
+            <input id="username" type="text" placeholder="הכנס שם משתמש" required>
+        </div>
+        <div class="form-group">
+            <label>סיסמה:</label>
+            <input id="password" type="password" placeholder="הכנס סיסמה" required>
+        </div>
+        <a  class="btn btn-start" onclick="login()">כניסה</a>
+        <!-- <a href="register.html" class="link-text" >עוד לא נרשמת? צור חשבון חדש</a> -->
+        <a href="register.html" class="link-text" >עוד לא נרשמת? צור חשבון חדש</a>
+    </div>
+</body>
+</html>

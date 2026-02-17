@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.conteainer {
+    display: grid;
+    /* יוצר עמודות של 150 פיקסלים שמתאימות לרוחב המסך */
+    grid-template-columns: repeat(auto-fill, 150px); 
+    gap: 10px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #333;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s;
+}
+
+.box:hover {
+    transform: scale(1.02);
+}
