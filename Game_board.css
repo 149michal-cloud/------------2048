@@ -179,3 +179,41 @@ h1 {
     text-transform: uppercase;
     color: #eee4da;
 }
+
+
+/* --- רספונסיביות למובייל --- */
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 38px; /* הקטנת הכותרת */
+    }
+
+    .header {
+        max-width: 320px; /* צמצום רוחב הכותרת והניקוד */
+    }
+
+    /* הקטנת הלוח */
+    .board {
+        grid-template-columns: repeat(4, 70px); /* תאים קטנים יותר */
+        grid-template-rows: repeat(4, 70px);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* הקטנת התאים והטקסט בתוכם */
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    .score-box {
+        min-width: 60px;
+        padding: 5px 10px;
+    }
+
+    .score-box #current-score, 
+    .score-box #best-score {
+        font-size: 18px;
+    }
+}
