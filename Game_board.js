@@ -12,8 +12,11 @@ const arrColors = [
   "hsl(240, 60%, 75%)",  // 1024 - כחול רויאל מעודן
   "hsl(200, 70%, 70%)"   // 2048 - כחול ים עמוק
 ];
-let scorecurrent = 0;
 
+let seconds = 0;
+let timerInterval;
+
+let scorecurrent = 0;
 
 let currentuser = JSON.parse(sessionStorage.getItem("current_user"));
 
@@ -41,6 +44,8 @@ let currentMat =[ [0, 0, 0, 0],
 
 function startGame() 
 {
+    startTimer();
+
     let arr = [];
     let index1 = Math.floor(Math.random() * 16);//הגרלת 2 מקומים רנדומליים בין 0 ל-15
     let index2 = Math.floor(Math.random() * 16);//הגרלת 2 מקומים רנדומליים בין 0 ל-15
@@ -461,4 +466,35 @@ function restartGame() {
     updateBoard(currentMat);
     let divScore = document.getElementById("current-score");
     divScore.textContent = "0";
+    clearInterval(timerInterval);
 }
+
+
+
+// פונקציה שמפעילה את הטיימר
+function startTimer() {
+    // איפוס טיימר קודם אם היה
+    if (timerInterval) clearInterval(timerInterval);
+    
+    seconds = 0;
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    seconds++;
+    let mins = Math.floor(seconds / 60);
+    let secs = seconds % 60;
+    
+    // פורמט של 00:00
+    let displayMins = mins < 10 ? "0" + mins : mins;
+    let displaySecs = secs < 10 ? "0" + secs : secs;
+    
+    const timerElement = document.getElementById("game-timer");
+    if (timerElement) {
+        timerElement.textContent = displayMins + ":" + displaySecs;
+    }
+}
+
+// קריאה לפונקציה בתוך startGame שלך
+// חפשי את פונקציית startGame והוסיפי שורה זו:
+// startTimer();

@@ -157,3 +157,25 @@ h1 {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+.score-box {
+    background-color: #bbada0; /* או כל צבע שמתאים לשאר התיבות שלך */
+    padding: 10px 20px;
+    border-radius: 6px;
+    min-width: 80px;
+    text-align: center;
+    color: white;
+}
+
+#game-timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.label {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #eee4da;
+}
