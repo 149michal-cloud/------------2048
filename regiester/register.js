@@ -32,5 +32,5 @@
     };
     localStorage.setItem("users", JSON.stringify(users));
     alert("ההרשמה הושלמה בהצלחה!");
-    window.location.href = "login.html";
+    window.location.href = "/log in/login.html";
  }

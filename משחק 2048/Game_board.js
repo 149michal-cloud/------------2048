@@ -23,7 +23,7 @@ let currentuser = JSON.parse(sessionStorage.getItem("current_user"));
 // בדיקה: אם אין משתמש מחובר, שלח אותו לדף ההתחברות
 if (!currentuser) {
     alert("אין משתמש מחובר. אנא התחבר כדי לשחק.");
-    window.location.href = "login.html"; 
+    window.location.href = "log in/login.html"; 
 }
 
 let scoremax = currentuser ? currentuser.score : 0;

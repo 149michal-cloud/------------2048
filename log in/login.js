@@ -19,7 +19,7 @@ function login()
         {
             alert("ברוך הבא! התחברת בהצלחה");
         sessionStorage.setItem("current_user", JSON.stringify(users[username]));
-        window.location.href = "menu.html";
+        window.location.href = "/menu.html";
         }
         else
         {
@@ -30,6 +30,6 @@ function login()
     else
     {
         alert("משתמש לא קיים!");
-        window.location.href = "register.html";
+        window.location.href = "register/register.html";
     }
 }
