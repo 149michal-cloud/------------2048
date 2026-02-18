@@ -126,3 +126,34 @@ h1 {
 .restart-btn:active {
     transform: scale(0.95); /* אפקט קטן של "לחיצה" כשלוחצים פיזית */
 }
+
+/* // --- עיצוב כפתור חזרה לתפריט בלבד --- */
+.btn-back {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #4a4a4a; /* צבע טקסט אפור כהה מעודן */
+    background-color: hsl(180, 55%, 80%); /* טורקיז תואם לאריח 2 */
+    border: none;
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל עדין שנותן עומק */
+    transition: all 0.3s ease; /* אנימציה חלקה לשינויים */
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* אפקט כשמעבירים את העכבר על הכפתור */
+.btn-back:hover {
+    background-color: hsl(180, 60%, 70%); /* צבע מעט כהה יותר */
+    transform: translateY(-2px); /* הכפתור "קופץ" מעט למעלה */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* הצל גדל */
+}
+
+/* אפקט בזמן הלחיצה עצמה */
+.btn-back:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

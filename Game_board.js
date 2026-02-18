@@ -19,6 +19,7 @@ let currentuser = JSON.parse(sessionStorage.getItem("current_user"));
 
 // בדיקה: אם אין משתמש מחובר, שלח אותו לדף ההתחברות
 if (!currentuser) {
+    alert("אין משתמש מחובר. אנא התחבר כדי לשחק.");
     window.location.href = "login.html"; 
 }
 
@@ -81,40 +82,30 @@ document.addEventListener("keydown", function(event) {
 
 function mergeRow(tempArr) {
     for (let i = 0; i < 3; i++) {
-        // בודק אם שני תאים סמוכים שווים ואינם אפס
         if (tempArr[i] === tempArr[i + 1] && tempArr[i] !== 0) {
-            tempArr[i] *= 2;      // מכפיל את הערך בתא הראשון
-            tempArr[i + 1] = 0;   // מאפס את התא השני
-            
-            // עדכון הניקוד הנוכחי
+            tempArr[i] *= 2;
+            tempArr[i + 1] = 0;
             scorecurrent += tempArr[i];
-            
-            // עדכון התצוגה ב-HTML (שימי לב ל-ID המדויק)
-            let divScore = document.getElementById("current-score");
-            if (divScore) {
-                divScore.textContent = scorecurrent;
-            }
 
-            // בדיקה ועדכון שיא הניקוד
+            let divScore = document.getElementById("current-score");
+            if (divScore) divScore.textContent = scorecurrent;
+
             if (scorecurrent > scoremax) {
                 scoremax = scorecurrent;
-                
-                // עדכון התצוגה של השיא ב-HTML
                 let divBestScore = document.getElementById("best-score");
-                if (divBestScore) {
-                    divBestScore.textContent = scoremax;
-                }
+                if (divBestScore) divBestScore.textContent = scoremax;
 
-                // שמירה ב-localStorage למשתמש הנוכחי
-                let current_user = JSON.parse(localStorage.getItem("current_user"));
-                if (current_user) {
-                    current_user.score = scoremax;
-                    localStorage.setItem("current_user", JSON.stringify(current_user));
+                // --- כאן השינוי המרכזי ---
+                if (currentuser) { // השם הנכון
+                    currentuser.score = scoremax;
                     
-                    // עדכון בתוך מאגר המשתמשים הכללי ("users")
+                    // שמירה ב-sessionStorage (זה מה שדואג שהמשתמש לא יתנתק או ייעלם)
+                    sessionStorage.setItem("current_user", JSON.stringify(currentuser));
+
+                    // עדכון המאגר הכללי ב-localStorage
                     let allUsers = JSON.parse(localStorage.getItem("users")) || {};
-                    if (allUsers[current_user.username]) {
-                        allUsers[current_user.username].score = scoremax;
+                    if (allUsers[currentuser.username]) {
+                        allUsers[currentuser.username].score = scoremax;
                         localStorage.setItem("users", JSON.stringify(allUsers));
                     }
                 }
