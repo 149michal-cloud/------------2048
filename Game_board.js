@@ -470,7 +470,6 @@ function restartGame() {
 }
 
 
-
 // פונקציה שמפעילה את הטיימר
 function startTimer() {
     // איפוס טיימר קודם אם היה
