@@ -55,6 +55,37 @@
 
    <button class="restart-btn" onclick="location.reload()">משחק חדש</button>
         <a href="menu.html" class="btn btn-back">חזור לתפריט</a>
+<div id="modal-overlay" class="overlay">
+    <div class="modal-card">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>כל הכבוד! 🏆</h2>
+        <div class="stats-container">
+            <p>ניקוד סופי: <strong id="final-score">0</strong></p>
+            <p>זמן משחק: <strong id="play-time">0</strong> שניות</p>
+        </div>
+        <button class="retry-btn" onclick="location.reload()">שחק שוב</button>
+    </div>
+</div>
 
+
+<div id="win-modal" class="win-overlay">
+    <div class="win-card">
+        <div class="confetti-icon">🎊</div>
+        <h2 class="win-title">ניצחון מוחץ!</h2>
+        <hr class="divider">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-label">ניקוד</span>
+                <span id="win-score" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">זמן</span>
+                <span id="win-time" class="stat-value">0</span>
+            </div>
+        </div>
+        <button class="win-btn" onclick="location.reload()">שיחקת אותה! שוב?</button>
+        <span class="close-x" onclick="document.getElementById('win-modal').style.display='none'">&times;</span>
+    </div>
+</div>
  </body>
  </html>

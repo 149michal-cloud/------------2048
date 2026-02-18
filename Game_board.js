@@ -301,12 +301,16 @@ function moveLeft() {
      if(gameStatus==1)
         {
             alert("ניצחת!");
+                        triggerWin(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
         if(gameStatus==-1)
         {
             alert("המשחק נגמר, אין לך מה לעשות יותר");
+                        showEndGame(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
@@ -330,12 +334,16 @@ function moveUp()
      if(gameStatus==1)
         {
             alert("ניצחת!");
+                        triggerWin(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
         if(gameStatus==-1)
         {
             alert("המשחק נגמר, אין לך מה לעשות יותר");
+                        showEndGame(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
@@ -358,12 +366,16 @@ function moveDown() {
      if(gameStatus==1)
         {
             alert("ניצחת!");
+                        triggerWin(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
         if(gameStatus==-1)
         {
             alert("המשחק נגמר, אין לך מה לעשות יותר");
+                        showEndGame(scorecurrent, document.getElementById("game-timer").textContent);
+
             restartGame();
             startGame();
         }
@@ -386,12 +398,14 @@ function moveRight() {
      if(gameStatus==1)
         {
             alert("ניצחת!");
+                        triggerWin(scorecurrent, document.getElementById("game-timer").textContent);
             restartGame();
             startGame();
         }
         if(gameStatus==-1)
         {
             alert("המשחק נגמר, אין לך מה לעשות יותר");
+            showEndGame(scorecurrent, document.getElementById("game-timer").textContent);
             restartGame();
             startGame();
         }
@@ -494,6 +508,20 @@ function updateTimer() {
     }
 }
 
-// קריאה לפונקציה בתוך startGame שלך
-// חפשי את פונקציית startGame והוסיפי שורה זו:
-// startTimer();
+// פונקציה להצגת החלונית (קרא לה בסיום המשחק)
+function showEndGame(score, time) {
+    document.getElementById('final-score').innerText = score;
+    document.getElementById('play-time').innerText = time;
+    document.getElementById('modal-overlay').style.display = 'flex';
+}
+
+// פונקציה לסגירת החלונית כשלוחצים על ה-X
+function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+}
+
+function triggerWin(score, time) {
+    document.getElementById('win-score').innerText = score;
+    document.getElementById('win-time').innerText = time ;
+    document.getElementById('win-modal').style.display = 'flex';
+}

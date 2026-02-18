@@ -17,7 +17,7 @@ function login()
     {
         if(users[username].password==password)
         {
-            alert("ברוך הבא! מציג היסטוריה...");
+            alert("ברוך הבא! התחברת בהצלחה");
         sessionStorage.setItem("current_user", JSON.stringify(users[username]));
         window.location.href = "menu.html";
         }
