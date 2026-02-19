@@ -119,34 +119,7 @@ function mergeRow(tempArr) {
     }
     return tempArr;
 }
-// function mergeRow(tempArr)
-// {
-//     for(let i=0; i<3; i++)
-//     {
-//         if (tempArr[i] == tempArr[i + 1] && tempArr[i] != 0) {
-//             tempArr[i] *= 2;
-//             tempArr[i + 1] = 0;
-//                 scorecurrent+=tempArr[i];
-//                  let divScore = document.getElementById("current-score");
-//                 divScore.textContent = scorecurrent;
-//                 if(scorecurrent>scoremax)
-//                 {
-//                     scoremax=scorecurrent;
-//                     let current_user = JSON.parse(localStorage.getItem("current_user"));
-//                     current_user.score=scoremax;
-//                     localStorage.setItem("current_user", JSON.stringify(current_user));//עדכון הציון של המשתמש הנוכחי במאגר המשתמשים
-//                     let divBestScore = document.getElementById("best-score");//עדכון הציון בתצוגה בלוח המשחק
-//                     divBestScore.textContent =  scoremax;
-//                     let users = JSON.parse(localStorage.getItem("users"));
-//                     users[current_user.username].score = scoremax;
-//                     localStorage.setItem("users", JSON.stringify(users));
 
-//                 }
-//         }
-       
-//     }
-//     return tempArr;
-// }
 //פונקציה שמזיזה את המספרים בשורה שמאלה, ומעבירה את האפסים לסוף השורה
 function shiftrowLeft(tempArr)
  {
